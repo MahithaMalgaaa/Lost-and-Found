@@ -1,0 +1,9 @@
+# Ignore dependency folders (too big)
+node_modules/
+client/node_modules/
+
+# Ignore uploads (user images)
+uploads/
+
+# Ignore system files
+.DS_Store
