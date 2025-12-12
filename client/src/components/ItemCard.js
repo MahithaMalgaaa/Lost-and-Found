@@ -15,7 +15,7 @@ const ItemCard = ({ item, onDelete, onResolve, currentUserId, currentUserRole })
 
   let imageUrl = item.image;
   if (imageUrl && !imageUrl.startsWith('http')) {
-      imageUrl = `http://localhost:5000/${imageUrl}`;
+      imageUrl = `https://lost-and-found-fziw.onrender.com/${imageUrl}`;
   }
 
   return (

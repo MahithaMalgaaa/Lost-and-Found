@@ -40,7 +40,7 @@ const ReportForm = ({ onClose, onRefresh }) => {
     const token = localStorage.getItem('token');
 
     try {
-      await axios.post('http://localhost:5000/api/items', data, {
+      await axios.post('https://lost-and-found-fziw.onrender.com/api/items', data, {
         headers: { 
             'Content-Type': 'multipart/form-data',
             'x-auth-token': token

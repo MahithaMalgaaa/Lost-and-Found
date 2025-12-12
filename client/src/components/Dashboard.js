@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/items');
+      const response = await axios.get('https://lost-and-found-fziw.onrender.com/api/items');
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching items:', error);
@@ -26,7 +26,7 @@ const Dashboard = () => {
     if (window.confirm("Are you sure you want to delete this report?")) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:5000/api/items/${id}`, {
+        await axios.delete(`https://lost-and-found-fziw.onrender.com/api/items/${id}`, {
             headers: { 'x-auth-token': token }
         });
         setItems(items.filter((item) => item._id !== id));
@@ -40,7 +40,7 @@ const Dashboard = () => {
   const handleResolve = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/items/${id}`, {}, {
+      await axios.put(`https://lost-and-found-fziw.onrender.com/api/items/${id}`, {}, {
         headers: { 'x-auth-token': token }
       });
       setItems(items.map((item) => 

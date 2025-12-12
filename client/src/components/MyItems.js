@@ -12,7 +12,7 @@ const MyItems = () => {
     try {
       const token = localStorage.getItem('token');
       // Call the new route we just made
-      const response = await axios.get('http://localhost:5000/api/items/my-items', {
+      const response = await axios.get('https://lost-and-found-fziw.onrender.com/api/items/my-items', {
         headers: { 'x-auth-token': token }
       });
       setItems(response.data);
@@ -31,7 +31,7 @@ const MyItems = () => {
     if (window.confirm("Are you sure you want to delete this?")) {
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/items/${id}`, {
+            await axios.delete(`https://lost-and-found-fziw.onrender.com/api/items/${id}`, {
                 headers: { 'x-auth-token': token }
             });
             setItems(items.filter((item) => item._id !== id));
@@ -44,7 +44,7 @@ const MyItems = () => {
   const handleResolve = async (id) => {
     try {
         const token = localStorage.getItem('token');
-        await axios.put(`http://localhost:5000/api/items/${id}`, {}, {
+        await axios.put(`https://lost-and-found-fziw.onrender.com/api/items/${id}`, {}, {
             headers: { 'x-auth-token': token }
         });
         // Update UI locally to show 'Solved'
